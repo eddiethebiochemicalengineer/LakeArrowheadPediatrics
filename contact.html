@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Call or request an appointment. Location, hours, and contact information." />
+  <title>Contact | Lake Arrowhead Pediatrics</title>
+
+  <meta property="og:title" content="Contact | Lake Arrowhead Pediatrics" />
+  <meta property="og:description" content="Call or request an appointment. Location, hours, and contact information." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preload" href="assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <script defer src="assets/js/settings.js"></script>
+  <script defer src="assets/js/site.js"></script>
+
+  <script id="schema-jsonld" type="application/ld+json"></script>
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1">
+    
+<section class="page-hero">
+  <div class="container">
+    <h1>Contact & Location</h1>
+    <p>Call us for the fastest help. For non-urgent requests, you can also submit an appointment request below.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="card">
+        <h2 style="margin:0 0 10px;">Clinic information</h2>
+        <div class="kv">
+          <div class="kv-row"><strong>Phone</strong> <a class="js-phone" href="#"></a></div>
+          <div class="kv-row"><strong>Fax</strong> <span class="js-fax"></span></div>
+          <div class="kv-row"><strong>Email</strong> <a class="js-email" href="#"></a></div>
+          <div class="kv-row"><strong>Address</strong> <span class="js-address"></span></div>
+          <div class="kv-row"><strong>Hours</strong> <span class="js-hours"></span></div>
+        </div>
+        <div class="form-actions" style="margin-top:14px;">
+          <a class="btn btn-primary js-phone" href="#">Call Now</a>
+          <a class="btn btn-secondary js-map-link" href="#" target="_blank" rel="noopener">Directions</a>
+        </div>
+        <div class="notice" style="margin-top:14px;">
+          <strong>After hours:</strong> Call our main number for guidance. If you believe your child needs emergency care, call 911 or go to the nearest ER.
+        </div>
+      </div>
+
+      <div class="card" id="appointment">
+        <h2 style="margin:0 0 10px;">Request an appointment</h2>
+        <p class="help">For privacy, please keep details brief (avoid sensitive medical info). If urgent, call us.</p>
+
+        <form class="form" data-appointment-form>
+          <div class="field">
+            <label for="parentName">Parent/Guardian name</label>
+            <input id="parentName" name="parent_name" autocomplete="name" required />
+          </div>
+
+          <div class="field">
+            <label for="childAge">Child’s age</label>
+            <input id="childAge" name="child_age" inputmode="numeric" placeholder="e.g., 6 months, 4 years" required />
+          </div>
+
+          <div class="field">
+            <label for="reason">Reason for visit</label>
+            <select id="reason" name="reason" required>
+              <option value="" selected disabled>Select one</option>
+              <option>Well‑child / checkup</option>
+              <option>Sick visit</option>
+              <option>Vaccines</option>
+              <option>Sports / school physical</option>
+              <option>Follow‑up</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="preferredTime">Preferred day/time</label>
+            <input id="preferredTime" name="preferred_time" placeholder="e.g., weekday mornings, next Tuesday after 3pm" />
+          </div>
+
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" inputmode="tel" autocomplete="tel" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" inputmode="email" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="insurance">Insurance (optional)</label>
+            <input id="insurance" name="insurance" placeholder="e.g., Medi‑Cal, IEHP, PPO" />
+          </div>
+
+          <div class="field">
+            <label>
+              <input type="checkbox" name="consent" required />
+              I understand this request is not for emergencies and I may be contacted to confirm details.
+            </label>
+          </div>
+
+          <!-- Honeypot anti-spam (hidden for humans) -->
+          <div class="field" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+            <label for="company_name">Company Name</label>
+            <input id="company_name" name="company_name" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Submit request</button>
+            <a class="btn" href="new-patients.html">New patient info</a>
+          </div>
+
+          <div class="help" data-form-status aria-live="polite"></div>
+        </form>
+
+        <div class="notice" style="margin-top:14px;">
+          <strong>Website note:</strong> To enable secure form delivery, set <code>appointmentRequest.endpointUrl</code> in <code>assets/js/settings.js</code>.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

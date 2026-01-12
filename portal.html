@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portal login and bill pay links (placeholder)." />
+  <title>Patient Portal | Lake Arrowhead Pediatrics</title>
+
+  <meta property="og:title" content="Patient Portal | Lake Arrowhead Pediatrics" />
+  <meta property="og:description" content="Portal login and bill pay links (placeholder)." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preload" href="assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <script defer src="assets/js/settings.js"></script>
+  <script defer src="assets/js/site.js"></script>
+
+  <script id="schema-jsonld" type="application/ld+json"></script>
+</head>
+<body data-page="portal">
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1">
+    
+<section class="page-hero">
+  <div class="container">
+    <h1>Patient Portal</h1>
+    <p>Use the links below to access the portal and online bill pay (if enabled). If you need help, please call the office.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="card">
+        <h2 style="margin:0 0 10px;">Portal login</h2>
+        <p>Secure messaging, visit summaries, and additional features may be available depending on your portal configuration.</p>
+        <a class="btn btn-primary" id="portal-login" href="#" target="_blank" rel="noopener">Portal Login</a>
+        <p class="help" style="margin-top:10px;">Update <code>portal.loginUrl</code> in <code>assets/js/settings.js</code>.</p>
+      </div>
+      <div class="card">
+        <h2 style="margin:0 0 10px;">Pay bill</h2>
+        <p>If your portal includes online payments, use the link below.</p>
+        <a class="btn btn-secondary" id="portal-pay" href="#" target="_blank" rel="noopener">Pay Bill</a>
+        <p class="help" style="margin-top:10px;">Update <code>portal.payBillUrl</code> in <code>assets/js/settings.js</code>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cfg = window.SITE_CONFIG;
+  const a = document.getElementById("portal-login");
+  const b = document.getElementById("portal-pay");
+  if (a) a.href = cfg.portal.loginUrl || "#";
+  if (b) b.href = cfg.portal.payBillUrl || "#";
+});
+</script>
+
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
